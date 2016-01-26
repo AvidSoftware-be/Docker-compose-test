@@ -7,4 +7,6 @@ web:
   links:
    - redis
 redis:
-  image: redis
+  image: redis:latest
+  volumes:
+  - ./data:/data
