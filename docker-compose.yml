@@ -3,16 +3,30 @@ version: "2"
 services:
 
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-     - "5000:5000"
+      - "5000:5000"
     command: python app.py
     volumes:
-     - .:/code
+      - .:/code
     links:
-     - redis
+      - redis
     networks:
       - front-tier
+      - back-tier
+
+  worker:
+    build:
+      context: .
+      dockerfile: DockerfileWorker
+    command: rq worker -c rqsettings
+    volumes:
+      - .:/code
+    links:
+      - redis
+    networks:
       - back-tier
 
   redis:
