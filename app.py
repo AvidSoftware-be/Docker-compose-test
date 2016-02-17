@@ -11,8 +11,9 @@ q = Queue(connection=redis)
 @app.route('/')
 def hello():
     redis.incr('hits')
-    q.enqueue(workerfunc, redis.get('hits'))
-    return 'Hello duckface! I have been seen %s times.' % redis.get('hits')
+    hits = redis.get('hits')
+    q.enqueue(workerfunc, hits)
+    return 'Hello duckface! I have been seen %s times.' % hits
 
 
 if __name__ == "__main__":

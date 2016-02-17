@@ -31,10 +31,13 @@ services:
 
   redis:
     image: redis:latest
+    ports:
+      - "6379:6379"
     volumes:
       - redis-data:/var/lib/redis
     networks:
       - back-tier
+      - front-tier
 
 volumes:
   redis-data:
