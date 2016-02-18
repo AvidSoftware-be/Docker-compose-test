@@ -2,7 +2,7 @@ version: "2"
 
 services:
 
-  web:
+  frontend:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,18 +10,18 @@ services:
       - "5000:5000"
     command: python app.py
     volumes:
-      - .:/code
+      - ./frontend:/code
     links:
       - redis
     networks:
       - front-tier
       - back-tier
 
-  worker:
+  backend:
     build:
       context: .
       dockerfile: DockerfileWorker
-    command: rq worker -c rqsettings
+    command: rq worker -c backend.rqsettings
     volumes:
       - .:/code
     links:

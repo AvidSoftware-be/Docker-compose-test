@@ -1,5 +1,5 @@
-from flask import Flask
 from myworker import workerfunc
+from flask import Flask
 from redis import Redis
 from rq import Queue
 

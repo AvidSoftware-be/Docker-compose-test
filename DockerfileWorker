@@ -2,6 +2,5 @@ FROM python:2.7
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
-ADD workerrequirements.txt /code
+ADD ./backend/workerrequirements.txt /code
 RUN pip install -r workerrequirements.txt
-ADD . /code/
