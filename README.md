@@ -6,5 +6,5 @@ this is solved in version 0.2 after upgrading the files to compose version 2 fil
 
 see http://stackoverflow.com/questions/35022883/why-cant-redis-access-the-disk-in-docker-compose for more info
 
-## Not working this version
+Version 0.3 is a working version
 See http://stackoverflow.com/questions/35466045/why-does-docker-add-command-not-copy-this-file
