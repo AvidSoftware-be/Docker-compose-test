@@ -8,3 +8,5 @@ see http://stackoverflow.com/questions/35022883/why-cant-redis-access-the-disk-i
 
 Version 0.3 is a working version
 See http://stackoverflow.com/questions/35466045/why-does-docker-add-command-not-copy-this-file
+
+License: MIT License
